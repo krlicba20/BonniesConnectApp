@@ -1,118 +1,78 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
+import Icon from 'react-native-vector-icons/Ionicons';
+// Calls all of the .js files that contain each page of the app
+import Login from '/Users/b17kr/BonniesConnectApp/android/app/src/Login.js';
+import Home from '/Users/b17kr/BonniesConnectApp/android/app/src/Home.js';
+import Athletics from '/Users/b17kr/BonniesConnectApp/android/app/src/Athletics.js';
+import StudentEvents from '/Users/b17kr/BonniesConnectApp/android/app/src/StudentEvents.js';
+import News from '/Users/b17kr/BonniesConnectApp/android/app/src/News.js';
+import StudentResources from '/Users/b17kr/BonniesConnectApp/android/app/src/StudentResources.js';
+import Profile from '/Users/b17kr/BonniesConnectApp/android/app/src/Profile.js';
+import Dining from '/Users/b17kr/BonniesConnectApp/android/app/src/Dining.js';
+import TechServices from '/Users/b17kr/BonniesConnectApp/android/app/src/TechServices.js';
+import SafetySecurity from '/Users/b17kr/BonniesConnectApp/android/app/src/SafetySecurity.js';
+import HealthCenter from '/Users/b17kr/BonniesConnectApp/android/app/src/HealthCenter.js';
+import CampusMap from '/Users/b17kr/BonniesConnectApp/android/app/src/CampusMap.js';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const TabNavigator = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+          if (route.name === 'Home') {
+            iconName = focused ? 'home' : 'home-outline';
+          } else if (route.name === 'Athletics') {
+            iconName = focused ? 'basketball' : 'basketball-outline';
+          } else if (route.name === 'Student Events') {
+            iconName = focused ? 'calendar' : 'calendar-outline';
+          } else if (route.name === 'News') {
+            iconName = focused ? 'newspaper' : 'newspaper-outline';
+          } else if (route.name === 'Student Resources') {
+            iconName = focused ? 'school' : 'school-outline';
+          } else if (route.name === 'Profile') {
+            iconName = focused ? 'person' : 'person-outline';
+          }
+          return <Icon name={iconName} size={size} color={color} />;
+        },
+      })}
+    >
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Athletics" component={Athletics} />
+      <Tab.Screen name="Student Events" component={StudentEvents} />
+      <Tab.Screen name="News" component={News} />
+      <Tab.Screen name="Student Resources" component={StudentResources} />
+      <Tab.Screen name="Profile" component={Profile} />
+    </Tab.Navigator>
   );
-}
+};
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+const BonniesConnectApp = () => {
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+        <Stack.Screen
+          name="Main"
+          component={TabNavigator}
+          options={{ headerShown: false }}
+        />
+        {/* Add all your screens here */}
+        <Stack.Screen name="Dining" component={Dining} />
+        <Stack.Screen name="Safety & Security" component={SafetySecurity} />
+        <Stack.Screen name="Tech Services" component={TechServices} />
+        <Stack.Screen name="Health Center" component={HealthCenter} />
+        <Stack.Screen name="Campus Map" component={CampusMap} />
+
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
-export default App;
+export default BonniesConnectApp;
