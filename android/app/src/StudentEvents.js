@@ -12,12 +12,12 @@ const StudentEvents = () => {
         <KeyboardAvoidingView style={[styles.container, { backgroundColor: isDarkMode ? '#000000' : '#FFFFFF' }]}
             behavior="padding">
             {/* Button for clubs */}
-            <TouchableOpacity style={styles.buttonContainer} onPress={() => {}}>
+            <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Clubs')}>
                 <Text style={styles.buttonText}>Clubs</Text>
             </TouchableOpacity>
 
             {/* Button for activity board */}
-            <TouchableOpacity style={styles.buttonContainer} onPress={() => {}}>
+            <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Activity Board')}>
                 <Text style={styles.buttonText}>Activity Board</Text>
             </TouchableOpacity>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, KeyboardAvoidingView, useColorScheme, Button, StyleSheet, Linking } from 'react-native';
+import { View, Text, KeyboardAvoidingView, useColorScheme, TouchableOpacity, Linking, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const SafetySecurity = () => {
@@ -15,49 +15,30 @@ const SafetySecurity = () => {
     return (
         <KeyboardAvoidingView style={[styles.container, { backgroundColor: isDarkMode ? '#000000' : '#FFFFFF' }]} behavior="padding">
 
-            {/* Header saying Safety & Security */}
-            <View style={styles.header}>
-                <Text>
-                    Safety & Security
-                </Text>
-            </View>
-
-            <View>
-                <Text>
-                    Phone Number: (716)-375-2525
+            <View style={styles.infoContainer}>
+                <Text style={styles.infoText}>
+                    Phone Number: (716)-375-2525{'\n'}
                     Location: Robinson Hall
                 </Text>
             </View>
-            <View style={styles.buttonContainer}>
-                <Button
-                    title='Call Safety & Security'
-                    onPress={callSafetySecurity}
-                />
-            </View>
-            <View style={styles.buttonContainer}>
-                <Button
-                    title='Report a Crime'
-                    onPress={() => Linking.openURL('https://cm.maxient.com/reportingform.php?StBonaventureUniv&layout_id=13')}
-                />
-            </View>
-            <View style={styles.buttonContainer}>
-                <Button
-                    title='Additional Info'
-                    onPress={() => Linking.openURL('https://www.sbu.edu/life-at-sbu/student-health-safety-conduct/safety-security')}
-                />
-            </View>
-            <View>
-                <Text>
-                    Interested in joining MERT?
+            <TouchableOpacity style={styles.buttonContainer} onPress={callSafetySecurity}>
+                <Text style={styles.buttonText}>Call Safety & Security</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.buttonContainer} onPress={() => Linking.openURL('https://cm.maxient.com/reportingform.php?StBonaventureUniv&layout_id=13')}>
+                <Text style={styles.buttonText}>Report a Crime</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.buttonContainer} onPress={() => Linking.openURL('https://www.sbu.edu/life-at-sbu/student-health-safety-conduct/safety-security')}>
+                <Text style={styles.buttonText}>Additional Info</Text>
+            </TouchableOpacity>
+            <View style={styles.infoContainer}>
+                <Text style={styles.infoText}>
+                    Interested in joining MERT?{'\n'}
                     Email mert@sbu.edu and download the following form
                 </Text>
             </View>
-            <View style={styles.buttonContainer}>
-                <Button
-                    title='Click here to access MERT application'
-                    onPress={() => Linking.openURL('https://www.sbu.edu/docs/default-source/campus-safety-security/sbu-mert-student-application.pdf')}
-                />
-            </View>
+            <TouchableOpacity style={styles.buttonContainer} onPress={() => Linking.openURL('https://www.sbu.edu/docs/default-source/campus-safety-security/sbu-mert-student-application.pdf')}>
+                <Text style={styles.buttonText}>Click here to access MERT application</Text>
+            </TouchableOpacity>
         </KeyboardAvoidingView>
     );
 };
@@ -72,10 +53,27 @@ const styles = StyleSheet.create({
         width: 160,
         textAlign: 'center',
     },
+    infoContainer: {
+        marginVertical: 20,
+        paddingHorizontal: 20,
+    },
+    infoText: {
+        fontSize: 18,
+        lineHeight: 24,
+    },
     buttonContainer: {
         marginVertical: 10,
+        backgroundColor: '#8B4513',
+        paddingVertical: 15,
         width: '80%',
-    }
+        alignSelf: 'center',
+        alignItems: 'center',
+    },
+    buttonText: {
+        color: '#ffffff',
+        fontWeight: 'bold',
+        fontSize: 16,
+    },
 });
 
 export default SafetySecurity;

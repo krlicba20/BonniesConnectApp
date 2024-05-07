@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, KeyboardAvoidingView, useColorScheme, TouchableOpacity, StyleSheet, Linking } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import Dining from '/Users/b17kr/BonniesConnectApp/android/app/src/Dining.js'
-import Safety from '/Users/b17kr/BonniesConnectApp/android/app/src/SafetySecurity.js'
-import Map from '/Users/b17kr/BonniesConnectApp/android/app/src/CampusMap.js'
-import Tech from '/Users/b17kr/BonniesConnectApp/android/app/src/TechServices.js'
-import Health from '/Users/b17kr/BonniesConnectApp/android/app/src/HealthCenter.js'
-
 
 const StudentResources = () => {
     const colorScheme = useColorScheme();
@@ -27,11 +21,11 @@ const StudentResources = () => {
                         <Text style={styles.buttonText}>Laundry</Text>
                     </TouchableOpacity>
                     {/**Button for Safety and Security */}
-                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Safety')}>
+                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Safety & Security')}>
                         <Text style={styles.buttonText}>Safety & Security</Text>
                     </TouchableOpacity>
                     {/**Button for Tech Services */}
-                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Tech')}>
+                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Tech Services')}>
                         <Text style={styles.buttonText}>Tech Services</Text>
                     </TouchableOpacity>
                 </View>
@@ -39,11 +33,11 @@ const StudentResources = () => {
                 {/** Second Column */}
                 <View style={styles.column}>
                     {/**Button for Health Center */}
-                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Health')}>
+                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Health Center')}>
                         <Text style={styles.buttonText}>Health Center</Text>
                     </TouchableOpacity>
                     {/**Button for Student Success */}
-                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Success')}>
+                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Student Success')}>
                         <Text style={styles.buttonText}>Student Success</Text>
                     </TouchableOpacity>
                     {/**Button for Academic Calendar */}
@@ -51,7 +45,7 @@ const StudentResources = () => {
                         <Text style={styles.buttonText}>Academic Calendar</Text>
                     </TouchableOpacity>
                     {/**Button for Campus Map */}
-                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Map')}>
+                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Campus Map')}>
                         <Text style={styles.buttonText}>Campus Map</Text>
                     </TouchableOpacity>
                 </View>

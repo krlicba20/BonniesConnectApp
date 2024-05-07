@@ -13,11 +13,11 @@ const Profile = () => {
                 {/** First Column */}
                 <View style={styles.column}>
                     {/**Button for Edit Profile */}
-                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('EditProfile')}>
+                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Edit Profile')}>
                         <Text style={styles.buttonText}>Edit Profile</Text>
                     </TouchableOpacity>
                     {/**Button for My Activities */}
-                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('MyActivities')}>
+                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('My Activities')}>
                         <Text style={styles.buttonText}>My Activities</Text>
                     </TouchableOpacity>
                 </View>
@@ -25,11 +25,11 @@ const Profile = () => {
                 {/** Second Column */}
                 <View style={styles.column}>
                     {/**Button for My classes */}
-                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('MyClasses')}>
+                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('My Classes')}>
                         <Text style={styles.buttonText}>My Classes</Text>
                     </TouchableOpacity>
                     {/**Button for My Interests */}
-                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('MyInterests')}>
+                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('My Interests')}>
                         <Text style={styles.buttonText}>My Interests</Text>
                     </TouchableOpacity>
                 </View>
@@ -43,7 +43,7 @@ const Profile = () => {
                         <Text style={styles.buttonText}>Notifications</Text>
                     </TouchableOpacity>
                     {/**Button for Student ID */}
-                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('StudentID')}>
+                    <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Student ID')}>
                         <Text style={styles.buttonText}>Student ID</Text>
                     </TouchableOpacity>
                 </View>

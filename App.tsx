@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
-// Calls all of the .js files that contain each page of the app
+// Calls all of the .js files that are each page of the app
 import Login from '/Users/b17kr/BonniesConnectApp/android/app/src/Login.js';
 import Home from '/Users/b17kr/BonniesConnectApp/android/app/src/Home.js';
 import Athletics from '/Users/b17kr/BonniesConnectApp/android/app/src/Athletics.js';
@@ -16,6 +16,17 @@ import TechServices from '/Users/b17kr/BonniesConnectApp/android/app/src/TechSer
 import SafetySecurity from '/Users/b17kr/BonniesConnectApp/android/app/src/SafetySecurity.js';
 import HealthCenter from '/Users/b17kr/BonniesConnectApp/android/app/src/HealthCenter.js';
 import CampusMap from '/Users/b17kr/BonniesConnectApp/android/app/src/CampusMap.js';
+import StudentSuccess from '/Users/b17kr/BonniesConnectApp/android/app/src/StudentSuccess.js';
+import ActivityBoard from '/Users/b17kr/BonniesConnectApp/android/app/src/ActivityBoard.js';
+import Clubs from '/Users/b17kr/BonniesConnectApp/android/app/src/Clubs.js';
+import MyClasses from '/Users/b17kr/BonniesConnectApp/android/app/src/MyClasses.js';
+import MyActivities from '/Users/b17kr/BonniesConnectApp/android/app/src/MyActivities.js';
+import MyInterests from '/Users/b17kr/BonniesConnectApp/android/app/src/MyInterests.js';
+import Notifications from '/Users/b17kr/BonniesConnectApp/android/app/src/Notifications.js';
+import EditProfile from '/Users/b17kr/BonniesConnectApp/android/app/src/EditProfile.js';
+import Themes from '/Users/b17kr/BonniesConnectApp/android/app/src/Themes.js';
+import StudentID from '/Users/b17kr/BonniesConnectApp/android/app/src/StudentID.js';
+import Settings from '/Users/b17kr/BonniesConnectApp/android/app/src/Settings.js';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -69,7 +80,17 @@ const BonniesConnectApp = () => {
         <Stack.Screen name="Tech Services" component={TechServices} />
         <Stack.Screen name="Health Center" component={HealthCenter} />
         <Stack.Screen name="Campus Map" component={CampusMap} />
-
+        <Stack.Screen name="Student Success" component={StudentSuccess} />
+        <Stack.Screen name="Activity Board" component={ActivityBoard} />
+        <Stack.Screen name="Clubs" component={Clubs} />
+        <Stack.Screen name="My Classes" component={MyClasses} />
+        <Stack.Screen name="My Activities" component={MyActivities} />
+        <Stack.Screen name="My Interests" component={MyInterests} />
+        <Stack.Screen name="Notifications" component={Notifications} />
+        <Stack.Screen name="Edit Profile" component={EditProfile} />
+        <Stack.Screen name="Themes" component={Themes} />
+        <Stack.Screen name="Student ID" component={StudentID} />
+        <Stack.Screen name="Settings" component={Settings} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -11,12 +11,17 @@ const Home = () => {
     const [searchQuery, setSearchQuery] = useState('');
 
     const findName = async () => {
-        const user = await findName(); // Assuming this is defined somewhere else
+        const user = await findName(); // This is defined in the database
         setName(user.name);
     };
 
     const toggleSearchBar = () => {
         setSearchVisible(!searchVisible);
+    };
+
+    const navigateToMyInterests = () => {
+        // Navigate to the "MyInterests" screen
+        navigation.navigate('My Interests');
     };
 
     return (
@@ -60,11 +65,11 @@ const Home = () => {
             </View>
 
             {/* My Interests */}
-            <View>
+            <TouchableOpacity onPress={navigateToMyInterests}>
                 <Text style={styles.interestHeader}>
                     My Interests
                 </Text>
-            </View>
+            </TouchableOpacity>
         </KeyboardAvoidingView>
     );
 };
@@ -127,8 +132,5 @@ const styles = StyleSheet.create({
     },
 });
 
-
-
-
-
 export default Home;
+
