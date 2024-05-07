@@ -1,0 +1,59 @@
+Future Implementation Ideas
+•   Login Page
+    o   Further development of the database and connection to the app.
+           Users table
+•   Home page
+    o   Connect welcome message to the database
+    o   Connect to schedule table in database.
+           Display the classes and times that user has during that day
+           Connect to other events, clubs, or teams that the student is a part of
+    o   Connect interest table in database
+           Display interests as buttons 
+    o   Add a place to scan qr codes
+•   Athletics Page
+    o   Link to whatever ticket services the school decides to use for that year
+    o   Display the upcoming sporting events and intramurals
+•   Student Events
+    o   Add upcoming user events that are dynamic and change as the day changes
+    o   Create an activity board, guest speaker and theme night pages
+           These pages can be basic, but should be easy to update and allow for people to see information regarding events time, date, and how to register for the events
+    o   Possibly add things such as performances on campus.
+•   News
+    o   Add url for all of the sbutv buttons
+•   Student Resources
+    o   Fix issues with non linking buttons not activating on press
+    o   Modify the buttons so they take up the full screen rather than just the top
+•   Profile
+    o   Work with safety and security to develop a qr code that can be scanned and used as a student ID
+           Add a popup that when the Student ID button is pressed. The qr code is displayed.
+    o   Figure out how to make light and dark mode work
+    o   Allow for the user to actually change their user profile
+           Find a way to add a profile picture
+    o   Modify the buttons so they take up the full screen rather than just the top
+•   Database
+    o   Add student ID to users table
+    o   Add table to store users schedule
+           Input via the school for each user
+           Link to student via student ID
+    o   Add table to store users interests
+           Ability to input into database table when added to app.
+           When interest is removed, remove it from the table
+           Link to each student via student ID
+    o   Add table to store if a student is in a club or event
+           Possibly just incorporate this to the users interest
+           Update with meeting times and contact information
+
+Helpful Information
+•   Basic Tutorial
+    o [Learn the Basics · React Native](https://reactnative.dev/docs/tutorial)
+•   All Basic information (This shows you basically everything about React Native and provides tools to help you)
+    o [Introduction · React Native](https://reactnative.dev/docs/getting-started)
+•   This shows you more information about the APIs that are part of React Native. One in particular that can be incredibly useful is Linking as it is used a lot throughout this app
+    o [AccessibilityInfo · React Native](https://reactnative.dev/docs/accessibilityinfo)
+•   This links to React Navigation, which is used throughout the app and allows for the buttons to work and bring you to place
+    o [Getting started | React Navigation](https://reactnavigation.org/docs/getting-started/)
+•   For all the buttons they use touchable opacity so this gives you a guide on how it works
+    o [TouchableOpacity · React Native](https://s-pace.github.io/react-native/docs/touchableopacity.html)
+•   Android Studio works well for developing this project as you can view the app to the side while typing the code.
+•   Code conversion shouldn’t be to hard from Android to iOS as it is relatively the same. 
+    o   Xcode is a recommended replacement 
